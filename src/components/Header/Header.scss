@@ -1,3 +1,139 @@
-.navbar{
-    position: sticky;
+.header {
+  top: 0px;
+  left: 0px;
+  width: 1280px;
+  height: 77px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 2px #0000000d;
+  opacity: 1;
+}
+
+.header_logo {
+  position: absolute;
+  top: 15px;
+  left: 85px;
+  width: 111px;
+  height: 47px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.header_logo_auth {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 95px;
+  height: 40px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.lang_en {
+  position: absolute;
+  top: 28px;
+  left: 1061px;
+  width: 49px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal normal 14px/21px Poppins;
+  letter-spacing: 0px;
+  color: #00000099;
+  opacity: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.lang_en_active {
+  width: 50px;
+  font:inherit;
+  color: #221f1f;
+}
+
+.lang_divider {
+  position: absolute;
+  left: 1126px;
+  top: 25px;
+  height: 30px;
+  color: #00000099;
+}
+
+.lang_bn {
+  position: absolute;
+  top: 28px;
+  left: 1146px;
+  width: 49px;
+  height: 20px;
+  /* UI Properties */
+  text-align: left;
+  font: normal normal normal 14px/21px Poppins;
+  letter-spacing: 0px;
+  color: #00000099;
+  opacity: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.lang_bn_active {
+  width: 50px;
+  font: inherit;
+  color: #221f1f;
+}
+
+.header_menu {
+  position: absolute;
+  top: 23px;
+  left: 237px;
+  width: 24px;
+  height: 24px;
+  /* UI Properties */
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.user_image {
+  position: absolute;
+  top: 20px;
+  left: 1133px;
+  width: 30px;
+  height: 30px;
+  /* UI Properties */
+  background: transparent 0% 0% no-repeat padding-box;
+  border-radius: 25px;
+  opacity: 1;
+}
+
+.username {
+  position: absolute;
+  top: 27px;
+  left: 1170px;
+  width: 64px;
+  height: 17px;
+  /* UI Properties */
+  color: var(--unnamed-color-000000de);
+  text-align: left;
+  font: normal normal normal 12px/18px Poppins;
+  letter-spacing: 0px;
+  color: #000000de;
+  opacity: 1;
+}
+
+.user_menu {
+  position: absolute;
+  top: 27px;
+  left: 1243px;
+  width: 17px;
+  height: 17px;
+  /* UI Properties */
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

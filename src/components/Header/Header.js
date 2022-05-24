@@ -1,38 +1,53 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import HeaderLogo from "../../images/header.svg";
+import HeaderMenu from "../../images/header_menu.svg";
+import UserImg from "../../images/header_user.png";
+import UserMenu from "../../images/header_user_menu.png";
+import "./Header.scss";
 
-const Header=()=> {
-  useEffect( () => {
-      
-    const timer = setTimeout(() => {
-       console.log('Header here');
-    }, 2000);     
-  },[])
+const Header = () => {
+  const [lang, setLang] = useState("en");
 
+  const [auth, setAuth] = useState(false);
 
-    return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-info">
+  const langHandler = (value) => {
+    setLang(value);
+  };
 
-        <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/home">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
-            </li>   
-            <li className="nav-item">
-              <Link className="nav-link" to="/Login">
-                Login/Register
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    );
-}
-export default Header
+  return (
+    <header className="header">
+      <img
+        className={auth ? "header_logo_auth" : "header_logo"}
+        src={HeaderLogo}
+        alt="Header Logo"
+      />
+      {!auth ? (
+        <>
+          <span
+            className={`lang_en ${lang === "en" ? "lang_en_active": ""}`}
+            onClick={() => langHandler("en")}
+          >
+            English
+          </span>
+          <span className="lang_divider"> | </span>
+          <span
+            className={`lang_bn ${lang === "bn" ? "lang_bn_active": ""}`}
+            onClick={() => langHandler("bn")}
+          >
+            Bangla
+          </span>
+        </>
+      ) : (
+        <>
+          <img className="header_menu" src={HeaderMenu} alt="Menu" />
+          <img className="user_image" src={UserImg} alt="User" />
+          <span className="username">Emily Blunt</span>
+          <button className="user_menu">
+            <img src={UserMenu} alt="User Menu" />
+          </button>
+        </>
+      )}
+    </header>
+  );
+};
+export default Header;

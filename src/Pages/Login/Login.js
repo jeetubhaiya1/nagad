@@ -7,6 +7,7 @@ const Login = () => {
   const [data, setData] = useState("");
   const onSubmit = data => console.log(data);
    
+  
   return (
     <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
       <input {...register("firstName", { required: true, maxLength: 20 })} /> <br /> <br />

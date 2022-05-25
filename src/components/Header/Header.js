@@ -24,14 +24,14 @@ const Header = () => {
       {!auth ? (
         <>
           <span
-            className={`lang_en ${lang === "en" ? "lang_en_active": ""}`}
+            className={`lang_en ${lang === "en" ? "lang_en_active" : ""}`}
             onClick={() => langHandler("en")}
           >
             English
           </span>
           <span className="lang_divider"> | </span>
           <span
-            className={`lang_bn ${lang === "bn" ? "lang_bn_active": ""}`}
+            className={`lang_bn ${lang === "bn" ? "lang_bn_active" : ""}`}
             onClick={() => langHandler("bn")}
           >
             Bangla

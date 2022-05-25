@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  padding: 7rem 10rem;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family:  Poppins;
+  font-style: normal;
+  font-weight:  normal;
+}
+.heading {
+  
+  width: 112px;
+  height: 31px;
+  text-align: left;
+  font-size: 40px;
+  color: #f58220;
+  
+}
+
+.para {
+  width: 350px;
+  height: 143px;
+  /* UI Properties */
+  color: var(--unnamed-color-000000de);
+  text-align: left;
+  line-height: 1.5rem;
+  color: #000000de;
+
+}
+
+.rightContainer{
+    text-align: left !important;
+}
+.sign-in-heading {
+    font-size: 30px;
+
+}
+
+.label {
+  width: 222px;
+  height: 20px;
+  font-size: 16px;
+  /* UI Properties */
+  color: #00000099;
+}
+
+.inputfield {
+  width: 445px !important ;
+  height: 48px !important;
+  border: 1px solid #0000001f;
+  border-radius: 8px;
+
+}
+
+
+.loginbutton{
+width: 445px;
+height: 48px;
+background: #0000001F 0% 0% no-repeat padding-box;
+border-radius: 8px;
+}

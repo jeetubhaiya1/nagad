@@ -7,6 +7,14 @@
   font-style: normal;
   font-weight:  normal;
 }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: safe;
+}
+
+
 .heading {
   
   width: 112px;
@@ -42,16 +50,8 @@
   font-size: 16px;
   /* UI Properties */
   color: #00000099;
+  margin-bottom: 10px;
 }
-
-.inputfield {
-  width: 445px !important ;
-  height: 48px !important;
-  border: 1px solid #0000001f;
-  border-radius: 8px;
-
-}
-
 
 .loginbutton{
 width: 445px;

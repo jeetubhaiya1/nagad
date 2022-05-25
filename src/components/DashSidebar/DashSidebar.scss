@@ -1,0 +1,46 @@
+.dash_drawer{
+    top: 78px !important;
+    background: #FFFFFF 0% 0% no-repeat padding-box !important;
+    box-shadow: 0px 3px 5px #00000029 !important;
+    opacity: 1 !important;
+    width: 80% !important;
+}
+.list{
+    width: 24vw;
+    padding: 1rem !important;
+    background-color: #ccc;
+    height: 100vh;
+    overflow-x: hidden !important;
+    position: absolute;
+}
+.nested_list{
+    position: relative;
+    left: 60px;
+    right: 18px;
+}
+.expand_icon{
+    right: 6px !important;
+}
+.sub_nested_list{
+    position: relative;
+    left: 63px;
+    right: 18px;
+}
+.merc_mgmt{
+    background-color: #F58220;
+    border-radius: 6px !important;
+    color: #fff !important;
+}
+.list_item{
+    border-radius: 6px !important;
+    background-color: rgb(212, 208, 208);
+    right: 18px;
+}
+.highlight_listitem{
+    background-color: rgb(233, 230, 230) !important;
+    border-radius: 6px !important;
+}
+
+.nested_list_item{
+    width: 15vw !important;
+}

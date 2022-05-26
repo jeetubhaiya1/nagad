@@ -23,6 +23,11 @@ const DashSidebar = (props) => {
         setShowSubMenu(false);
     }
 
+    const handleListClose = ()=> {
+        setShowSubNestedSubMenu(false);
+        setShowNestedSubMenu(false);
+        setShowSubMenu(false);
+    }
 
     return (
             <div className="dash_side_drawer">
@@ -33,7 +38,11 @@ const DashSidebar = (props) => {
                     onClose={handleClose}
                 >
                     <List className="list">
-                        <ListItem disablePadding className={showSubMenu ? "highlight_listitem" :"list_item"} onClick={()=>setShowSubMenu(!showSubMenu)}>
+                        <ListItem disablePadding className={showSubMenu ? "highlight_listitem" :"list_item"} 
+                            onClick={
+                                showSubMenu ? handleListClose  :
+                                () => setShowSubMenu(!showSubMenu)
+                        }>
                             <ListItemButton>
                             <ListItemIcon>
                                 <DashboardIcon />

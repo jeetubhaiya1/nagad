@@ -21,7 +21,7 @@ const LoginPage = () => {
           Nagad is an innovative and promising digital financial service of
           Bangladesh Post Office that embarked upon a glorious journey on March
           26, 2019. After its inception, Nagad has financially included about
-          5.5 crore people only
+          5.5 crore people only.
         </p>
       </div>
       <div className="rightContainer">
@@ -40,7 +40,6 @@ const LoginPage = () => {
             htmlFor="userId"
             fieldName="UserId / Phone Number / Email"
           />
-
           <TextField
             type="string"
             id="userId"
@@ -50,7 +49,6 @@ const LoginPage = () => {
           />
 
           <Label id="password" fieldName="Password" />
-
           <TextField
             type="password"
             id="password"

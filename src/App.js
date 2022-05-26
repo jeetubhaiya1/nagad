@@ -1,12 +1,16 @@
 import React, { Suspense } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate,
+} from "react-router-dom";
 import { adminRoutes, clientRoutes } from "./routes";
-import Home from "./Pages/Home/Home";
+import Home from "./Pages/Home/Home.tsx";
 import Login from "./Pages/Login/Login";
 import About from "./Pages/About/About";
-//import Header from './components/Header/Header';
-import ProtectedRoutes from "./routes/Auth/protectedRoutes.js";
 import LoginPage from "./components/LoginPage/LoginPage.tsx";
 
 const Header = React.lazy(() => import("./components/Header/Header"));
@@ -20,11 +24,7 @@ function App() {
         </Suspense>
         <hr />
         <Routes>
-          <Route
-            exact
-            path="/home"
-            element={<ProtectedRoutes Component={Home} />}
-          />
+          <Route path="/" element={<Navigate to="/login" replace />} />
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/about" element={<About />} />

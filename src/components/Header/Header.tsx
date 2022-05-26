@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks.ts";
-import { logout } from "../../redux/reducers/authReducer.ts";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks.tsx";
+import { logout } from "../../redux/reducers/authReducer.tsx";
+import { toggle } from "../../redux/reducers/uiReducer.tsx";
 import HeaderLogo from "../../images/header.svg";
 import HeaderMenu from "../../images/header_menu.svg";
 import UserImg from "../../images/header_user.png";
@@ -21,6 +22,10 @@ const Header = () => {
   const logoutHandler = () => {
     dispatch(logout());
     navigate("/login");
+  };
+
+  const sideMenuBarToggleHandler = () => {
+    dispatch(toggle());
   };
 
   return (
@@ -48,7 +53,7 @@ const Header = () => {
         </>
       ) : (
         <>
-          <button className="header_menu">
+          <button className="header_menu" onClick={sideMenuBarToggleHandler}>
             <img src={HeaderMenu} alt="Menu" />
           </button>
           <img className="user_image" src={UserImg} alt="User" />

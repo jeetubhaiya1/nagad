@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppSelector, useAppDispatch } from "../../redux/hooks.tsx";
+import { logout } from "../../redux/reducers/authReducer.tsx";
+import { toggle } from "../../redux/reducers/uiReducer.tsx";
 import HeaderLogo from "../../images/header.svg";
 import HeaderMenu from "../../images/header_menu.svg";
 import UserImg from "../../images/header_user.png";
@@ -7,10 +11,21 @@ import "./Header.scss";
 
 const Header = () => {
   const [lang, setLang] = useState("en");
-  const [auth, setAuth] = useState(false);
+  const auth = useAppSelector((state) => state.auth.isAuth);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const langHandler = (value) => {
     setLang(value);
+  };
+
+  const logoutHandler = () => {
+    dispatch(logout());
+    navigate("/login");
+  };
+
+  const sideMenuBarToggleHandler = () => {
+    dispatch(toggle());
   };
 
   return (
@@ -38,12 +53,12 @@ const Header = () => {
         </>
       ) : (
         <>
-          <button className="header_menu">
+          <button className="header_menu" onClick={sideMenuBarToggleHandler}>
             <img src={HeaderMenu} alt="Menu" />
           </button>
           <img className="user_image" src={UserImg} alt="User" />
           <span className="username">Emily Blunt</span>
-          <button className="user_menu">
+          <button className="user_menu" onClick={logoutHandler}>
             <img src={UserMenu} alt="User Menu" />
           </button>
         </>

@@ -13,6 +13,9 @@
   flex-direction: column;
   justify-content: safe;
 }
+.password{
+  border: none;
+}
 
 .heading {
   width: 112px;

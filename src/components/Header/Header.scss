@@ -1,4 +1,4 @@
-.header-wrapper {
+.header {
   top: 0px;
   left: 0px;
   width: 100%;
@@ -6,15 +6,6 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 2px #0000000d;
   opacity: 1;
-  display: flex;
-  margin: auto;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-left{
-  width: 45%;
 }
 
 .header_logo {
@@ -57,7 +48,7 @@
 
 .lang_en_active {
   width: 50px;
-  font:inherit;
+  font: inherit;
   color: #221f1f;
 }
 
@@ -102,6 +93,11 @@
   /* UI Properties */
   background: transparent 0% 0% no-repeat padding-box;
   opacity: 1;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .user_image {

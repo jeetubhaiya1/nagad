@@ -1,20 +1,20 @@
 import About from "../Pages/About/About";
-import Home from "../Pages/Home/Home";
+import Home from "../Pages/Home/Home.tsx";
 import Login from "../Pages/Login/Login";
 
 export const clientRoutes = [
   {
-    path: '/home',
+    path: "/home",
     component: Home,
     exact: true,
   },
   {
-    path: '/about',
+    path: "/about",
     component: About,
     exact: false,
   },
   {
-    path: '/login',
+    path: "/login",
     component: Login,
     exact: false,
   },

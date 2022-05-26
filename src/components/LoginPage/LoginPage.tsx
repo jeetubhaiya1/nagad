@@ -12,19 +12,18 @@ const LoginPage = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-
-  const [passwordType,setPasswordType] = useState("password");
-  const [passwordInput,setPasswordInput] = useState("");
-  const handlePasswordChange = (e:any) =>{
+  const [passwordType, setPasswordType] = useState("password");
+  const [passwordInput, setPasswordInput] = useState("");
+  const handlePasswordChange = (e: any) => {
     setPasswordInput(e.target.value);
-  }
-  const togglePassword = () =>{
-    if(passwordType==="password"){
-      setPasswordType("text")
+  };
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
       return;
     }
-    setPasswordType("password")
-  }
+    setPasswordType("password");
+  };
   const loginHandler = () => {
     dispatch(login());
     navigate("/home");
@@ -66,25 +65,25 @@ const LoginPage = () => {
           />
 
           <Label id="password" fieldName="Password" />
-            <fieldset className="password">
+          <fieldset className="password">
             <TextField
-            type={passwordType}
-            id="password"
-            placeholder="Password"
-            name="password"
-            required={true}
-            onChange={handlePasswordChange}
-            value={passwordInput}
-          />
-          <Button className="btn btn-outline-primary" onClick={togglePassword}>
-            {passwordType === "password" ? (
-              <i className="bi bi-eye-slash"></i>
-            ) : (
-              <i className="bi bi-eye"></i>
-            )}
-          </Button>
-            </fieldset>
-          
+              type={passwordType}
+              id="password"
+              placeholder="Password"
+              name="password"
+              required={true}
+              onChange={handlePasswordChange}
+              value={passwordInput}
+            />
+            <Button onClick={togglePassword}>
+              {passwordType === "password" ? (
+                <i className="bi bi-eye-slash"></i>
+              ) : (
+                <i className="bi bi-eye"></i>
+              )}
+            </Button>
+          </fieldset>
+
           <Button
             className="loginbutton"
             variant="contained"

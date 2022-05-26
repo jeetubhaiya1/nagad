@@ -13,8 +13,31 @@
   flex-direction: column;
   justify-content: safe;
 }
-.password{
+.password {
+  width: 445px;
+  height: 48px;
+  /* UI Properties */
+  border: 1px solid #0000001f;
+  border-radius: 8px;
+  opacity: 1;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.password:focus-within {
+  border: 2px solid black;
+}
+
+.password input {
+  width: 350px;
+  height: 43px;
   border: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.password input:focus {
+  outline: none;
 }
 
 .heading {

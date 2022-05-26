@@ -8,6 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 
@@ -22,6 +23,12 @@ const DashSidebar = (props) => {
     setShowSubMenu(false);
   };
 
+    const handleListClose = () => {
+        setShowSubNestedSubMenu(false);
+        setShowNestedSubMenu(false);
+        setShowSubMenu(false);
+    }
+
   return (
     <div className="dash_side_drawer">
       <Box className="dash_drawer" onClose={handleClose}>
@@ -29,16 +36,25 @@ const DashSidebar = (props) => {
           <ListItem
             disablePadding
             className={showSubMenu ? "highlight_listitem" : "list_item"}
-            onClick={() => setShowSubMenu(!showSubMenu)}
+            onClick={showSubMenu ? handleListClose  :
+                                () => setShowSubMenu(!showSubMenu)
+            }
           >
             <ListItemButton>
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
               <ListItemText primary="Management Portal" />
-              <ListItemIcon>
-                <ExpandMoreIcon className="expand_icon" />
-              </ListItemIcon>
+            { showSubMenu ? (
+                <ListItemIcon>
+                   <ExpandLessIcon className="expand_icon" />
+                </ListItemIcon>
+                ) : (
+                <ListItemIcon>
+                   <ExpandMoreIcon className="expand_icon" />
+                </ListItemIcon>
+                )            
+            }   
             </ListItemButton>
           </ListItem>
           {showSubMenu && (
@@ -53,9 +69,16 @@ const DashSidebar = (props) => {
                     <ManageAccountsIcon />
                   </ListItemIcon>
                   <ListItemText primary="Merchant Management" />
-                  <ListItemIcon>
-                    <ExpandMoreIcon className="expand_icon" />
-                  </ListItemIcon>
+                  { showNestedSubMenu ? (
+                    <ListItemIcon>
+                        <ExpandLessIcon className="expand_icon" />
+                    </ListItemIcon>
+                    ) : (
+                    <ListItemIcon>
+                        <ExpandMoreIcon className="expand_icon" />
+                    </ListItemIcon>
+                    )            
+                }
                 </ListItemButton>
               </ListItem>
               {showNestedSubMenu && (
@@ -79,9 +102,16 @@ const DashSidebar = (props) => {
                   >
                     <ListItemButton className="list_item_button">
                       <ListItemText primary="Merchant Registeration" />
-                      <ListItemIcon>
+                      { showSubNestedSubMenu ? (
+                        <ListItemIcon>
+                        <ExpandLessIcon className="expand_icon" />
+                        </ListItemIcon>
+                        ) : (
+                        <ListItemIcon>
                         <ExpandMoreIcon className="expand_icon" />
-                      </ListItemIcon>
+                        </ListItemIcon>
+                        )            
+                    }
                     </ListItemButton>
                   </ListItem>
 

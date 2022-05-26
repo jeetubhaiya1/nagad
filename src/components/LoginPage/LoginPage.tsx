@@ -1,15 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks.ts";
 import "./LoginPage.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Label from "../Label/Label.tsx";
 import TextField from "../TextField/TextField.tsx";
+import { login } from "../../redux/reducers/authReducer.ts";
 
 const LoginPage = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const loginHandler = () => {
+    dispatch(login());
     navigate("/home");
   };
 

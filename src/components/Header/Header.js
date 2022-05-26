@@ -7,7 +7,6 @@ import "./Header.scss";
 
 const Header = () => {
   const [lang, setLang] = useState("en");
-
   const [auth, setAuth] = useState(false);
 
   const langHandler = (value) => {
@@ -39,7 +38,9 @@ const Header = () => {
         </>
       ) : (
         <>
-          <img className="header_menu" src={HeaderMenu} alt="Menu" />
+          <button className="header_menu">
+            <img src={HeaderMenu} alt="Menu" />
+          </button>
           <img className="user_image" src={UserImg} alt="User" />
           <span className="username">Emily Blunt</span>
           <button className="user_menu">

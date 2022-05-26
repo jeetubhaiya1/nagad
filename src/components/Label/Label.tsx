@@ -1,8 +1,12 @@
 import React from "react";
-import "./Label.scss"
+import "./Label.scss";
 
-const Label = ({ id, fieldName }) => {
-  return <label className="label" htmlFor={id}>{fieldName}</label>;
+const Label = ({ htmlFor, fieldName }) => {
+  return (
+    <label className="label" htmlFor={htmlFor}>
+      {fieldName}
+    </label>
+  );
 };
 
 export default Label;
